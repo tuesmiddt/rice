@@ -1,0 +1,90 @@
+# Set prefix to Ctrl-Space
+unbind C-b
+set -g prefix C-Space
+bind C-Space send-prefix
+
+# Renumber windows automatically
+set-option -g renumber-windows on
+
+# Rename based on current app
+setw -g automatic-rename on
+
+# 256 color support
+set -g default-terminal "screen-256color"
+
+# Show activity in background windows
+setw -g monitor-activity on
+
+# Move status bar to the top
+set-option -g status-position top
+
+# Start window numbers from 1
+set -g base-index 1
+
+# Mouse support
+set -g mouse on
+
+# Update window title
+set -g set-titles on
+set -g set-titles-string '#T - #I:#W'
+
+# Easy config reload
+bind-key R source-file ~/.tmux.conf \; display-message "tmux.conf reloaded."
+
+# vi is good
+setw -g mode-keys vi
+
+# Vim style pane bindings
+bind-key v split-window -h -c "#{pane_current_path}"
+bind-key s split-window -v -c "#{pane_current_path}"
+bind-key h select-pane -L
+bind-key j select-pane -D
+bind-key k select-pane -U
+bind-key l select-pane -R
+
+bind J resize-pane -D 10
+bind K resize-pane -U 10
+bind L resize-pane -L 10
+bind H resize-pane -R 10
+
+# Window navigation
+bind-key c new-window -c "#{pane_current_path}"
+bind-key n next-window
+bind-key N previous-window
+
+bind-key [ copy-mode
+bind-key ] paste-buffer
+
+# Setup 'v' to begin selection as in Vim
+bind-key -Tcopy-mode-vi 'v' send -X begin-selection
+bind-key -Tcopy-mode-vi 'y' send -X copy-selection
+
+set-window-option -g display-panes-time 1500
+
+# Status Bar
+set-option -g status-interval 1
+set-option -g status-left ''
+set-option -g status-right '%l:%M%p'
+set-option -g status-fg default
+
+set-option -g status-bg black
+
+# # Status Bar solarized-dark (default)
+# set-option -g status-bg black
+# set-option -g pane-active-border-fg yellow
+# set-option -g pane-border-fg cyan
+#
+# # Status Bar solarized-light
+# if-shell "[ \"$COLORFGBG\" = \"11;15\" ]" "set-option -g status-bg white"
+# if-shell "[ \"$COLORFGBG\" = \"11;15\" ]" "set-option -g pane-active-border-fg white"
+# if-shell "[ \"$COLORFGBG\" = \"11;15\" ]" "set-option -g pane-border-fg white"
+
+# Set window notifications
+setw -g monitor-activity on
+set -g visual-activity on
+
+# Allow the arrow key to be used immediately after changing windows
+set-option -g repeat-time 0
+
+# Remove delay after escape
+set -s escape-time 0
