@@ -1,12 +1,6 @@
-# Pimp my OS
+## OS Customization
 
----
-
-## i3wm
-
-image
-
-- Unix philosophy
+![](./i3.png)
 
 ---
 
@@ -20,6 +14,22 @@ image
 - Notifications
 - Launcher
 - Screen locker
+
+---
+
+## Window Managers
+
+- Tiling
+- Stacking
+
+---
+
+## i3wm
+
+- Unix philosophy
+- Pre-configured distributions:
+  - Manjaro i3
+  - Arco Linux
 
 ---
 
@@ -88,3 +98,7 @@ image
 - ssh-agent
 - git
 - pure-promt
+
+---
+
+# Script your setup!
