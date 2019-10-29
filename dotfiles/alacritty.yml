@@ -201,7 +201,7 @@ colors:
   #selection:
   #  text: '0xeaeaea'
   #  background: '0x404040'
-  
+
     # Normal colors
   normal:
     black: '0x3B4252'
@@ -235,7 +235,7 @@ colors:
     magenta: '0xB48EAD'
     cyan: '0x88C0D0'
     white: '0xE5E9F0'
-  
+
   # Indexed Colors
   #
   # The indexed colors include all colors from 16 to 256.
